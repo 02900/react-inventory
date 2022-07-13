@@ -34,23 +34,23 @@ const InventoryHeader: React.FC<IInventoryHeader> = ({ sortBy, callback }) => {
     <div className="header">
       <div className="code">
         <button onClick={() => onSortChanged(Category.Code)}>
-          code
+          Code
           {sortBy.category === Category.Code &&
             prioritySymbol[sortBy.direction]}
         </button>
       </div>
 
       <div className="description">
-        <span>description</span>
+        <span>Description</span>
       </div>
 
       <div className="image">
-        <span>image</span>
+        <span>Image</span>
       </div>
 
       <div className="position">
         <button onClick={() => onSortChanged(Category.Position)}>
-          position{" "}
+          Position{" "}
           {sortBy.category === Category.Position &&
             prioritySymbol[sortBy.direction]}
         </button>
@@ -58,7 +58,7 @@ const InventoryHeader: React.FC<IInventoryHeader> = ({ sortBy, callback }) => {
 
       <div className="price">
         <button onClick={() => onSortChanged(Category.Price)}>
-          price{" "}
+          Price{" "}
           {sortBy.category === Category.Price &&
             prioritySymbol[sortBy.direction]}
         </button>
@@ -66,7 +66,7 @@ const InventoryHeader: React.FC<IInventoryHeader> = ({ sortBy, callback }) => {
 
       <div className="quantity">
         <button onClick={() => onSortChanged(Category.Quantity)}>
-          quantity{" "}
+          Quantity{" "}
           {sortBy.category === Category.Quantity &&
             prioritySymbol[sortBy.direction]}
         </button>

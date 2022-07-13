@@ -6,6 +6,7 @@ import Searchbox from "./components/searchbox/searchbox";
 import { filterInventory } from "./services/filter-inventory";
 import { SortBy } from "./interfaces/article.interface";
 import { Category, Direction } from "./enums/inventory-sort-by";
+import './App.scss';
 
 const App: React.FC = () => {
   const [articles, setArticles] = useState(initialArticles);
