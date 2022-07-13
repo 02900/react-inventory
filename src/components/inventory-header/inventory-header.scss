@@ -4,6 +4,10 @@
   @include inventory-table();
   background-color: #dadada;
 
+  button {
+    padding: 0 0.5rem;
+  }
+
   .description {
     display: none;
   }

@@ -1,6 +1,6 @@
 @mixin inventory-table {
   display: flex;
-
+  padding: 0 1rem;
   * {
     margin-right: 1rem;
     padding: 0.5rem 0;
