@@ -8,10 +8,10 @@ export const filterInventory: (query: string, sortBy: SortBy) => IArticle[] = (
 ) => {
   let articles = [...initialArticles];
 
-  const filterByCategory = sortBy.category !== Category.None;
-  const filterByDirection = sortBy.direction !== Direction.None;
+  const hasFilterByCategory = sortBy.category !== Category.None;
+  const hasFilterByDirection = sortBy.direction !== Direction.None;
 
-  if (filterByCategory && filterByDirection) {
+  if (hasFilterByCategory && hasFilterByDirection) {
     articles = articles.sort((a, b) => {
       if (sortBy.category === Category.None) return 0;
 

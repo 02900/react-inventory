@@ -9,13 +9,20 @@ import { Category, Direction } from "./enums/inventory-sort-by";
 
 const App: React.FC = () => {
   const [articles, setArticles] = useState(initialArticles);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   const [sortBy, setSortBy] = useState<SortBy>({
     category: Category.None,
     direction: Direction.None,
   });
 
-  useEffect(() => setArticles(filterInventory(query, sortBy)), [query, sortBy]);
+  useEffect(() => {
+    const newSortBy = {
+      category: sortBy.category,
+      direction: sortBy.direction
+    };
+
+    setArticles(filterInventory(query, newSortBy));
+  }, [query, sortBy.category, sortBy.direction]);
 
   return (
     <main>
