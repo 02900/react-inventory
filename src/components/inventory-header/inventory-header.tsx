@@ -1,17 +1,46 @@
-import React from "react";
-import './inventory-header.scss'
+import React, { useState } from "react";
+import "./inventory-header.scss";
+import { SortBy } from "../../enums/inventory-sort-by";
 
-const InventoryHeader: React.FC = () => {
-  return (
-    <div className="header">
-      <button className="item code">code</button>
-      <button className="item description">description</button>
-      <button className="item image">image</button>
-      <button className="item position">position</button>
-      <button className="item price">price</button>
-      <button className="item quantity">quantity</button>
-    </div>
-  );
+interface IInventoryHeader {
+  callback: (sortBy: string) => void;
 }
 
-export default InventoryHeader
+const InventoryHeader: React.FC<IInventoryHeader> = ({ callback }) => {
+  const [sortBy, setSortBy] = useState(SortBy.None);
+
+  const onSortChanged = (newSort: SortBy) => {
+    setSortBy(newSort);
+  };
+
+  return (
+    <div className="header">
+      <button className="code" onClick={() => onSortChanged(SortBy.Code)}>
+        code {sortBy === SortBy.Code? '↑' : ''}
+      </button>
+
+      <span className="description">description</span>
+      <span className="image">image</span>
+
+      <button
+        className="position"
+        onClick={() => onSortChanged(SortBy.Position)}
+      >
+        position
+      </button>
+
+      <button className="price" onClick={() => onSortChanged(SortBy.Price)}>
+        price
+      </button>
+
+      <button
+        className="quantity"
+        onClick={() => onSortChanged(SortBy.Quantity)}
+      >
+        quantity
+      </button>
+    </div>
+  );
+};
+
+export default InventoryHeader;
