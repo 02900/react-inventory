@@ -2,6 +2,23 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## About this project 
+A simple React app that displays a table view of the products. The table is sortable by column and include a search bar that filters the table elements on every key stroke.
+
+Example search functionality:
+
+- When the search bar is empty, all products are displayed.
+- When the user types "HWR16-03", the table just shows the product with that code.
+
+## Demo
+https://user-images.githubusercontent.com/25335293/178843099-338e8247-d909-4e3c-92aa-ae99b96940c0.mp4
+
+https://user-images.githubusercontent.com/25335293/178843110-3303a156-ee2d-48f8-82fd-ad9e07a9c7c8.mp4
+
+## Next steps: 
+- Add unit test
+- In mobile device whe the user clicks some item shows a modal with the product image and description
+
 ## Available Scripts
 
 In the project directory, you can run:
