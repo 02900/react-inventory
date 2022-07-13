@@ -1,12 +1,30 @@
 import { initialArticles } from "../data-dummy/articles";
+import { Category, Direction } from "../enums/inventory-sort-by";
 import { IArticle, SortBy } from "../interfaces/article.interface";
 
-export const filterInventory: (query: string) => IArticle[] = (
+export const filterInventory: (query: string, sortBy: SortBy) => IArticle[] = (
   query: string,
+  sortBy: SortBy,
 ) => {
-  if (query === "") return initialArticles;
+  let articles = [...initialArticles];
 
-  return initialArticles.filter((article) => {
+  const filterByCategory = sortBy.category !== Category.None;
+  const filterByDirection = sortBy.direction !== Direction.None;
+
+  if (filterByCategory && filterByDirection) {
+    articles = articles.sort((a, b) => {
+      if (sortBy.category === Category.None) return 0;
+
+      if (sortBy.direction === Direction.Asc) {
+        return a[sortBy.category] > b[sortBy.category] ? -1 : 1;
+      }
+      return a[sortBy.category] > b[sortBy.category] ? 1 : -1;
+    });
+  }
+
+  if (query === "") return articles;
+
+  articles = articles.filter((article) => {
     const articleValues = Object.values(article);
     let hasQuery = false;
 
@@ -21,4 +39,6 @@ export const filterInventory: (query: string) => IArticle[] = (
 
     return hasQuery;
   });
+
+  return articles;
 };

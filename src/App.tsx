@@ -15,7 +15,7 @@ const App: React.FC = () => {
     direction: Direction.None,
   });
 
-  useEffect(() => setArticles(filterInventory(query)), [query]);
+  useEffect(() => setArticles(filterInventory(query, sortBy)), [query, sortBy]);
 
   return (
     <main>
