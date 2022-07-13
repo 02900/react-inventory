@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface ISearchbox {
+  innnerQuery: string,
   callback: (query: string) => void;
 }
 
-const Searchbox: React.FC<ISearchbox> = ({ callback }) => {
-  const [innnerQuery, setInnerQuery] = useState("");
-
-  const onValueChanged = (value: string) => {
-    setInnerQuery(value);
-    callback(value);
-  };
-
+const Searchbox: React.FC<ISearchbox> = ({ innnerQuery, callback }) => {
   return (
-    <input value={innnerQuery} onChange={(e) => onValueChanged(e.target.value)} />
+    <input value={innnerQuery} onChange={(e) => callback(e.target.value)} />
   );
 };
 

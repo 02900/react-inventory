@@ -1,8 +1,10 @@
 import { initialArticles } from "../data-dummy/articles";
-import { IArticle } from "../interfaces/article.interface";
+import { IArticle, SortBy } from "../interfaces/article.interface";
 
-export const filterInventory: (query: string) => IArticle[] = (query: string) => {
-  if (query === '') return initialArticles;
+export const filterInventory: (query: string) => IArticle[] = (
+  query: string,
+) => {
+  if (query === "") return initialArticles;
 
   return initialArticles.filter((article) => {
     const articleValues = Object.values(article);
