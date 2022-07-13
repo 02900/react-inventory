@@ -32,36 +32,45 @@ const InventoryHeader: React.FC<IInventoryHeader> = ({ sortBy, callback }) => {
 
   return (
     <div className="header">
-      <button className="code" onClick={() => onSortChanged(Category.Code)}>
-        code
-        {sortBy.category === Category.Code && prioritySymbol[sortBy.direction]}
-      </button>
+      <div className="code">
+        <button onClick={() => onSortChanged(Category.Code)}>
+          code
+          {sortBy.category === Category.Code &&
+            prioritySymbol[sortBy.direction]}
+        </button>
+      </div>
 
-      <span className="description">description</span>
-      <span className="image">image</span>
+      <div className="description">
+        <span>description</span>
+      </div>
 
-      <button
-        className="position"
-        onClick={() => onSortChanged(Category.Position)}
-      >
-        position{" "}
-        {sortBy.category === Category.Position &&
-          prioritySymbol[sortBy.direction]}
-      </button>
+      <div className="image">
+        <span>image</span>
+      </div>
 
-      <button className="price" onClick={() => onSortChanged(Category.Price)}>
-        price{" "}
-        {sortBy.category === Category.Price && prioritySymbol[sortBy.direction]}
-      </button>
+      <div className="position">
+        <button onClick={() => onSortChanged(Category.Position)}>
+          position{" "}
+          {sortBy.category === Category.Position &&
+            prioritySymbol[sortBy.direction]}
+        </button>
+      </div>
 
-      <button
-        className="quantity"
-        onClick={() => onSortChanged(Category.Quantity)}
-      >
-        quantity{" "}
-        {sortBy.category === Category.Quantity &&
-          prioritySymbol[sortBy.direction]}
-      </button>
+      <div className="price">
+        <button onClick={() => onSortChanged(Category.Price)}>
+          price{" "}
+          {sortBy.category === Category.Price &&
+            prioritySymbol[sortBy.direction]}
+        </button>
+      </div>
+
+      <div className="quantity">
+        <button onClick={() => onSortChanged(Category.Quantity)}>
+          quantity{" "}
+          {sortBy.category === Category.Quantity &&
+            prioritySymbol[sortBy.direction]}
+        </button>
+      </div>
     </div>
   );
 };

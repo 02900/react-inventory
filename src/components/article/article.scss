@@ -1,5 +1,7 @@
-@import '/src/assets/styles/mixins/inventory-table.scss';
+@import "/src/assets/styles/mixins/inventory-table.scss";
 
 .article {
   @include inventory-table();
+  margin-bottom: 1rem;
+  background-color: whitesmoke;
 }

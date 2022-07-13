@@ -1,16 +1,28 @@
 import React from "react";
-import './article.scss';
+import "./article.scss";
 import { IArticle } from "../../interfaces/article.interface";
 
 const Article: React.FC<IArticle> = (article) => {
   return (
     <div className="article">
-      <span className="code">{article.code}</span>
-      <span className="description">{article.description}</span>
-      <span className="image">{article.image}</span>
-      <span className="position">{article.position}</span>
-      <span className="price">{article.price}</span>
-      <span className="quantity">{article.quantity}</span>
+      <div className="code">
+        <span>{article.code}</span>
+      </div>
+      <div className="description">
+        <span>{article.description}</span>
+      </div>
+      <div className="image">
+        <span>{article.image}</span>
+      </div>
+      <div className="position">
+        <span>{article.position}</span>
+      </div>
+      <div className="price">
+        <span>{article.price}</span>
+      </div>
+      <div className="quantity">
+        <span>{article.quantity}</span>
+      </div>
     </div>
   );
 };
