@@ -5,12 +5,12 @@ import { IArticle } from "../../interfaces/article.interface";
 const Article: React.FC<IArticle> = (article) => {
   return (
     <div className="article">
-      <span>{article.code}</span>
-      <span>{article.description}</span>
-      <span>{article.image}</span>
-      <span>{article.position}</span>
-      <span>{article.price}</span>
-      <span>{article.quantity}</span>
+      <span className="code">{article.code}</span>
+      <span className="description">{article.description}</span>
+      <span className="image">{article.image}</span>
+      <span className="position">{article.position}</span>
+      <span className="price">{article.price}</span>
+      <span className="quantity">{article.quantity}</span>
     </div>
   );
 };

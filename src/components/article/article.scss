@@ -3,5 +3,29 @@
 
   span {
     margin-right: 1rem;
+
+    &.code {
+      width: 8rem;
+    }
+
+    &.description {
+      width: 16rem;
+    }
+
+    &.image {
+      width: 8rem;
+    }
+
+    &.position {
+      width: 8rem;
+    }
+
+    &.price {
+      width: 8rem;
+    }
+
+    &.quantity {
+      width: 8rem;
+    }
   }
 }
