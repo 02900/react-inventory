@@ -1,6 +1,6 @@
 import { IArticle } from "../interfaces/article.interface";
 
-export const articles: IArticle[] = [
+export const initialArticles: IArticle[] = [
   {
     code: "HWR16-03",
     position: 1,

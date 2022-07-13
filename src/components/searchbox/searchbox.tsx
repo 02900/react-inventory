@@ -5,15 +5,15 @@ interface ISearchbox {
 }
 
 const Searchbox: React.FC<ISearchbox> = ({ callback }) => {
-  const [query, setQuery] = useState("");
+  const [innnerQuery, setInnerQuery] = useState("");
 
   const onValueChanged = (value: string) => {
-    setQuery(value);
+    setInnerQuery(value);
     callback(value);
   };
 
   return (
-    <input value={query} onChange={(e) => onValueChanged(e.target.value)} />
+    <input value={innnerQuery} onChange={(e) => onValueChanged(e.target.value)} />
   );
 };
 
