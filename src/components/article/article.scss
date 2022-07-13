@@ -4,4 +4,9 @@
   @include inventory-table();
   margin-bottom: 1rem;
   background-color: whitesmoke;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }

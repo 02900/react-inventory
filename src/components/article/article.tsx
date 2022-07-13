@@ -12,7 +12,7 @@ const Article: React.FC<IArticle> = (article) => {
         <span>{article.description}</span>
       </div>
       <div className="image">
-        <span>{article.image}</span>
+        <img src={article.image} />
       </div>
       <div className="position">
         <span>{article.position}</span>
