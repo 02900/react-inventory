@@ -17,6 +17,8 @@ https://user-images.githubusercontent.com/25335293/178843110-3303a156-ee2d-48f8-
 
 ## Next steps: 
 - Add unit test
+- Consume the data from an API
+- Use memo hook to improve filtering performance when there are many articles
 - In mobile device whe the user clicks some item shows a modal with the product image and description
 
 ## Available Scripts
