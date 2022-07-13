@@ -4,10 +4,14 @@ import Article from "./components/article/article";
 import { articles } from "./data-dummy/articles";
 import InventoryHeader from "./components/inventory-header/inventory-header";
 
+const filterInventory = (query: string ) => {
+  console.log(`Filtering by ${query}`);
+}
+
 const App: React.FC = () => {
   return (
     <>
-      <Searchbox></Searchbox>
+      <Searchbox callback={filterInventory}></Searchbox>
 
       <InventoryHeader></InventoryHeader>
 
